@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trikonekt - Multilingual Video Suite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at 50% 0%, #0c1b18 0%, #050a09 100%);
+    }
+    .glass-card {
+      background: rgba(15, 26, 23, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-glow {
+      box-shadow: 0 0 35px rgba(16, 185, 129, 0.15);
+    }
+    .nav-btn.active {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+      border-color: rgba(52, 211, 153, 0.7);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-100 p-4 md:p-8 flex flex-col items-center">
+
+  <!-- Header -->
+  <header class="w-full max-w-5xl mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-amber-400 p-[2px] shadow-lg shadow-emerald-500/25">
+        <div class="w-full h-full bg-[#091311] rounded-[10px] flex items-center justify-center font-black text-emerald-400 text-xl">
+          ∞
+        </div>
+      </div>
+      <div>
+        <h1 class="text-xl md:text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+          TRIKONEKT
+          <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Official Presentation Suite</span>
+        </h1>
+        <p class="text-xs text-slate-400">Connected Commerce • Local Businesses • Stronger Communities</p>
+      </div>
+    </div>
+
+    <!-- Quick info badge -->
+    <div class="flex items-center gap-2 text-xs text-slate-300 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>3 Dedicated Language Editions (English, Kannada, Hindi)</span>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="w-full max-w-5xl flex flex-col gap-6">
+
+    <!-- Language Selector Navigation Bar -->
+    <div class="glass-card rounded-2xl p-3 border border-emerald-500/30 flex flex-wrap items-center justify-between gap-2 shadow-xl">
+      <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400 pl-3">
+        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Choose Video Edition:
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <!-- English Button -->
+        <button id="btn-en" onclick="switchVideo('en')" class="nav-btn active flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border border-transparent bg-white/5 hover:bg-white/10 text-slate-300">
+          <span>🇬🇧</span>
+          <span>English</span>
+          <span class="text-[10px] opacity-75 font-mono ml-1 px-1.5 py-0.5 rounded bg-black/30">01:39</span>
+        </button>
+
+        <!-- Kannada Button -->
+        <button id="btn-kn" onclick="switchVideo('kn')" class="nav-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border border-transparent bg-white/5 hover:bg-white/10 text-slate-300">
+          <span>🇮🇳</span>
+          <span>ಕನ್ನಡ (Kannada)</span>
+          <span class="text-[10px] opacity-75 font-mono ml-1 px-1.5 py-0.5 rounded bg-black/30">02:55</span>
+        </button>
+
+        <!-- Hindi Button -->
+        <button id="btn-hi" onclick="switchVideo('hi')" class="nav-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border border-transparent bg-white/5 hover:bg-white/10 text-slate-300">
+          <span>🇮🇳</span>
+          <span>हिन्दी (Hindi)</span>
+          <span class="text-[10px] opacity-75 font-mono ml-1 px-1.5 py-0.5 rounded bg-black/30">02:43</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PANEL 1: English Dedicated Video -->
+    <section id="panel-en" class="glass-card glass-card-glow rounded-2xl overflow-hidden shadow-2xl p-4 md:p-6 border border-emerald-500/20">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-white/5">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">English Edition</span>
+            <span class="text-xs font-mono text-slate-400">Duration: 01:39 • 1080p Full HD</span>
+          </div>
+          <h2 class="text-lg font-bold text-white mt-1">Trikonekt English Presentation Video</h2>
+          <p class="text-xs text-slate-400">Native English voiceover synchronized with English on-screen subtitles and slide graphics.</p>
+        </div>
+      </div>
+
+      <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-inner border border-white/10">
+        <video 
+          id="video-en" 
+          class="w-full h-full object-contain" 
+          controls 
+          preload="metadata"
+          src="Trikonekt_Intro_EN.mp4"
+        >
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </section>
+
+    <!-- PANEL 2: Kannada Dedicated Video -->
+    <section id="panel-kn" class="hidden glass-card glass-card-glow rounded-2xl overflow-hidden shadow-2xl p-4 md:p-6 border border-emerald-500/20">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-white/5">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">ಕನ್ನಡ ಆವೃತ್ತಿ</span>
+            <span class="text-xs font-mono text-slate-400">ಅವಧಿ: 02:55 • 1080p Full HD</span>
+          </div>
+          <h2 class="text-lg font-bold text-white mt-1">ತ್ರಿಕೋನೆಕ್ಟ್ ಕನ್ನಡ ಪರಿಚಯ ವಿಡಿಯೋ (Kannada Video)</h2>
+          <p class="text-xs text-slate-400">ಕನ್ನಡ ಧ್ವನಿ ನಿರೂಪಣೆ ಮತ್ತು ಕನ್ನಡ ಶೀರ್ಷಿಕೆಗಳೊಂದಿಗೆ ಪರಿಪೂರ್ಣ ಸಿಂಕ್ ಮಾಡಿದ ಪೂರ್ಣ ವಿವರಣೆಯ ವಿಡಿಯೋ.</p>
+        </div>
+      </div>
+
+      <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-inner border border-white/10">
+        <video 
+          id="video-kn" 
+          class="w-full h-full object-contain" 
+          controls 
+          preload="metadata"
+          src="Trikonekt_Intro_KN.mp4"
+        >
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </section>
+
+    <!-- PANEL 3: Hindi Dedicated Video -->
+    <section id="panel-hi" class="hidden glass-card glass-card-glow rounded-2xl overflow-hidden shadow-2xl p-4 md:p-6 border border-emerald-500/20">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-white/5">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">हिन्दी संस्करण</span>
+            <span class="text-xs font-mono text-slate-400">अवधि: 02:43 • 1080p Full HD</span>
+          </div>
+          <h2 class="text-lg font-bold text-white mt-1">त्रिकोनेक्ट हिंदी परिचय वीडियो (Hindi Video)</h2>
+          <p class="text-xs text-slate-400">हिंदी वॉयसओवर और हिंदी सबटाइटल्स के साथ सम्पूर्ण विवरण वाला सिंक्रनाइज़्ड वीडियो।</p>
+        </div>
+      </div>
+
+      <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-inner border border-white/10">
+        <video 
+          id="video-hi" 
+          class="w-full h-full object-contain" 
+          controls 
+          preload="metadata"
+          src="Trikonekt_Intro_HI.mp4"
+        >
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const panels = {
+      en: document.getElementById('panel-en'),
+      kn: document.getElementById('panel-kn'),
+      hi: document.getElementById('panel-hi')
+    };
+
+    const videos = {
+      en: document.getElementById('video-en'),
+      kn: document.getElementById('video-kn'),
+      hi: document.getElementById('video-hi')
+    };
+
+    const buttons = {
+      en: document.getElementById('btn-en'),
+      kn: document.getElementById('btn-kn'),
+      hi: document.getElementById('btn-hi')
+    };
+
+    function pauseAll() {
+      Object.values(videos).forEach(v => {
+        if (v && !v.paused) v.pause();
+      });
+    }
+
+    function switchVideo(target) {
+      pauseAll();
+
+      // Update button styles
+      Object.keys(buttons).forEach(k => {
+        if (k === target) {
+          buttons[k].classList.add('active');
+        } else {
+          buttons[k].classList.remove('active');
+        }
+      });
+
+      // Show only the selected panel
+      Object.keys(panels).forEach(k => {
+        if (k === target) {
+          panels[k].classList.remove('hidden');
+          videos[k].play().catch(() => {});
+        } else {
+          panels[k].classList.add('hidden');
+        }
+      });
+    }
+
+    // Auto-pause other videos when one starts playing
+    Object.values(videos).forEach(video => {
+      video.addEventListener('play', () => {
+        Object.values(videos).forEach(other => {
+          if (other !== video && !other.paused) {
+            other.pause();
+          }
+        });
+      });
+    });
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === '1') switchVideo('en');
+      if (e.key === '2') switchVideo('kn');
+      if (e.key === '3') switchVideo('hi');
+    });
+  </script>
+</body>
+</html>

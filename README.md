@@ -1,2 +1,3 @@
 # Trikonekt-Video-Multi-lingual-
-English, Kannada, Hindi
+
+Official Trikonekt Presentation Suite supporting English, Kannada, and Hindi.
